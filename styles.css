@@ -1,59 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #dbeafe, #e0f2fe);
-    color: #1f2933;
+    background:
+        radial-gradient(circle at top left, #1e3a8a 0%, transparent 30%),
+        radial-gradient(circle at bottom right, #0f766e 0%, transparent 25%),
+        linear-gradient(135deg, #0f172a, #111827 45%, #1f2937);
+    color: #f8fafc;
 }
 
-/* Keskitetty sisältö */
 .container {
-    max-width: 700px;
+    width: min(900px, calc(100% - 40px));
     margin: 60px auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Otsikko */
+.hero {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 40px 32px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #93c5fd;
+}
+
 h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    margin: 0 0 14px;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    font-weight: 700;
 }
 
-/* Väliotsikko */
 .subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #4b5563;
-}
-
-/* Lista */
-.list {
-    list-style: none;
-    padding: 0;
     margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cbd5e1;
 }
 
-/* Lista item */
-.list li {
-    margin-bottom: 12px;
+.links-section {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
-/* Linkit kortteina */
-.list a {
-    display: block;
-    padding: 14px 18px;
-    background: #f1f5f9;
-    border-radius: 10px;
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.task-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-radius: 18px;
     text-decoration: none;
-    color: #1d4ed8;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    color: #f8fafc;
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.28), rgba(14, 165, 233, 0.16));
+    border: 1px solid rgba(147, 197, 253, 0.22);
+    box-shadow: 0 10px 25px rgba(2, 6, 23, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-/* Hover-efekti */
-.list a:hover {
-    background: #dbeafe;
-    transform: translateX(5px);
+.task-button::after {
+    content: "→";
+    font-size: 20px;
+    color: #bfdbfe;
+    transition: transform 0.2s ease;
+}
+
+.task-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(2, 6, 23, 0.35);
+    border-color: rgba(191, 219, 254, 0.5);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(6, 182, 212, 0.22));
+}
+
+.task-button:hover::after {
+    transform: translateX(4px);
+}
+
+.task-button:active {
+    transform: translateY(-1px);
+}
+
+.project-button {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.18));
+    border: 1px solid rgba(216, 180, 254, 0.24);
+}
+
+.project-button:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.42), rgba(236, 72, 153, 0.26));
+    border-color: rgba(233, 213, 255, 0.55);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: min(100% - 24px, 900px);
+        margin: 24px auto;
+    }
+
+    .hero,
+    .links-section {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .task-button {
+        font-size: 17px;
+        padding: 16px 18px;
+    }
 }
