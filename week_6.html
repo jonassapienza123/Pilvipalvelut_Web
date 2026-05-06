@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viikko 6</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #0066cc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Viikko 6 – Cloudflare Web Analytics</h1>
+
+    <p>
+      Web-analytiikkaa voidaan hyödyntää esimerkiksi sovelluksen käytettävyyden,
+      suorituskyvyn ja käyttäjäpolkujen tutkimiseen. Analytiikan avulla voidaan
+      nähdä kuinka monta käyttäjää sovelluksessa käy, millä sivuilla he viettävät
+      aikaa ja missä vaiheessa käyttäjät mahdollisesti poistuvat sovelluksesta.
+      Näiden tietojen avulla sovellusta voidaan kehittää käyttäjäystävällisemmäksi
+      ja teknisesti toimivammaksi. Lisäksi analytiikka auttaa tunnistamaan
+      mahdollisia ongelmia, kuten hitaasti latautuvia sivuja tai virhetilanteita.
+      Tässä projektissa käytettiin Cloudflare Web Analyticsia, koska se on kevyt
+      ja yksityisyyttä kunnioittava analytiikkaratkaisu.
+    </p>
+
+    <p>
+      CORS-ongelma voidaan välttää esimerkiksi siten, että backend-palvelin sallii
+      pyynnöt oikeista domaineista Access-Control-Allow-Origin -headerilla.
+      Lisäksi frontend ja backend voidaan sijoittaa saman domainin alle tai käyttää
+      reverse proxy -ratkaisua, jolloin selain ei estä pyyntöjä eri alkuperien
+      välillä. Myös palvelimen oikea konfigurointi ja turvallinen API-suunnittelu
+      auttavat välttämään CORS-virheitä.
+    </p>
+
+    <a href="index.html">← Takaisin etusivulle</a>
+  </div>
+</body>
+</html>
